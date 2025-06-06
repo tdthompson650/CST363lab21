@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<link href="/display.css" rel="stylesheet">
+</head>
+<body>
+	<div th:object="${doctor}">
+
+			<form action="/doctor/edit" method="POST">
+			<section>
+				<h1>Update Doctor Profile</h1>
+				<p>
+					<span th:text="${message}"></span>
+				</p>
+
+				<p>
+					<label for="id"> <span>ID: </span>
+					</label> <input type="text" id="id" th:field="*{id}"  readonly />
+				</p>
+				<p>
+					<label for="firstName"> <span>First Name: </span>
+					</label> <input type="text" id="firstName" th:field="*{firstName}"  readonly />
+				</p>
+				<p>
+					<label for="lastName"> <span>Last Name: </span>
+					</label> <input type="text" id="lastName" th:field="*{lastName}"  readonly />
+				</p>
+				<p>
+					<label for="specialty"> <span>Specialty: </span>
+					</label> <input type="text" id="specialty" th:field="*{specialty}" />
+				</p>
+				<p>
+					<label for="year"> <span>First Year in Practice: </span>
+					</label> <input type="text" id="year" th:field="*{practiceSinceYear}" />
+				</p>
+
+				</section>
+				<p>
+					<button type="submit">Submit Change</button>
+				</p>
+			</form>
+		
+	</div>
+</body>
+
+</html>
